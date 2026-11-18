@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/><meta content="mobile_stack" name="shell-type"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config = { darkMode: "class", theme: { extend: { colors: { "tertiary": "#000000", "error": "#ba1a1a", "outline": "#747878", "on-primary-container": "#858383", "surface-container": "#eeeeea", "on-primary": "#ffffff", "surface": "#faf9f5", "on-secondary-fixed": "#00210b", "on-secondary": "#ffffff", "surface-dim": "#dadad6", "on-background": "#1a1c1a", "outline-variant": "#c4c7c7", "on-tertiary-fixed": "#00210b", "on-error-container": "#93000a", "surface-bright": "#faf9f5", "inverse-surface": "#2f312e", "primary": "#000000", "on-surface": "#1a1c1a", "on-surface-variant": "#444748", "secondary-fixed": "#62ff95", "tertiary-fixed": "#71fd98", "surface-tint": "#5f5e5e", "background": "#faf9f5", "inverse-on-surface": "#f1f1ed", "primary-fixed": "#e5e2e1", "surface-variant": "#e2e3df", "secondary-container": "#59fd90", "tertiary-container": "#00210b", "surface-container-lowest": "#ffffff", "on-tertiary-container": "#009849", "on-secondary-container": "#007236", "on-tertiary": "#ffffff", "on-primary-fixed": "#1c1b1b", "secondary": "#006d34", "primary-container": "#1c1b1b", "on-tertiary-fixed-variant": "#005224", "secondary-fixed-dim": "#37e279", "surface-container-high": "#e8e8e4", "inverse-primary": "#c8c6c5", "error-container": "#ffdad6", "on-secondary-fixed-variant": "#005225", "surface-container-highest": "#e2e3df", "on-primary-fixed-variant": "#474646", "primary-fixed-dim": "#c8c6c5", "tertiary-fixed-dim": "#52e07f", "surface-container-low": "#f4f4f0", "on-error": "#ffffff" }, borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" }, spacing: { "space-xs": "0.25rem", "gutter": "1rem", "space-sm": "0.5rem", "margin": "1rem", "gutter-mobile": "0.75rem", "space-lg": "1.5rem", "margin-mobile": "1rem", "space-md": "1rem", "space-xl": "2rem" }, fontFamily: { "label-action": ["Barlow Condensed"], "headline-sm": ["Barlow Condensed"], "body-sm": ["Inter"], "headline-lg": ["Barlow Condensed"], "body-md": ["Inter"], "display-currency-mobile": ["Barlow Condensed"], "display-currency": ["Barlow Condensed"], "label-tag": ["Barlow Condensed"], "body-lg": ["Inter"], "eyebrow": ["Inter"], "title-md": ["Inter"], "headline-md": ["Barlow Condensed"] }, fontSize: { "label-action": ["18px", { "lineHeight": "22px", "letterSpacing": "0.05em", "fontWeight": "700" }], "headline-sm": ["20px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "700" }], "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }], "headline-lg": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "800" }], "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }], "display-currency-mobile": ["38px", { "lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "display-currency": ["44px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }], "label-tag": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "700" }], "body-lg": ["15px", { "lineHeight": "22px", "fontWeight": "500" }], "eyebrow": ["11px", { "lineHeight": "14px", "letterSpacing": "0.12em", "fontWeight": "700" }], "title-md": ["16px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-md": ["24px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "700" }] } } } };</script><style>@layer base{html,body{width:100%;margin:0;padding:0;min-height:100vh;}body{-webkit-font-smoothing:antialiased;}.pb-safe{padding-bottom:env(safe-area-inset-bottom,0px);}.pt-safe{padding-top:env(safe-area-inset-top,0px);}}::-webkit-scrollbar{display:none;}</style><style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head><body class="bg-surface text-on-surface flex flex-col min-h-screen selection:bg-secondary-fixed selection:text-on-secondary-fixed"><header class="fixed top-0 w-full z-50 pt-safe bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-14 px-margin flex items-center justify-between"><div class="flex items-center gap-space-sm"><button aria-label="Go back" class="w-11 h-11 -ml-space-xs flex items-center justify-center rounded-full text-on-surface hover:bg-surface-container active:scale-95 transition-transform" onclick="history.back()" type="button"><span class="material-symbols-outlined text-[22px]">arrow_back</span></button><div class="flex flex-col"><span class="font-eyebrow text-eyebrow text-on-surface-variant uppercase tracking-wider">ONBOARDING</span><h1 class="font-headline-sm text-headline-sm text-on-surface uppercase tracking-tight leading-none">Flat Setup</h1></div></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></header><main class="flex-1 flex flex-col relative w-full pt-14 pb-safe bg-surface"><div class="flex flex-col w-full px-margin pb-6 gap-space-lg">
+<div class="flex flex-col gap-space-xs mt-space-sm">
+<div class="flex items-center justify-between">
+<span class="font-eyebrow text-eyebrow text-on-surface-variant uppercase tracking-widest">STEP 2 OF 4</span>
+<span class="font-label-tag text-label-tag uppercase text-secondary font-bold">50% DONE</span>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden flex">
+<div class="bg-secondary-container h-full w-1/2 rounded-full transition-all duration-300"></div>
+</div>
+<h2 class="font-headline-lg text-headline-lg uppercase text-on-surface tracking-tight mt-space-xs">
+      WHAT DO ROOMMATES CALL YOU<span class="text-secondary-fixed-dim">.</span>
+</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Set your ledger handle and avatar badge so the flat knows who settled the kirana run.</p>
+</div>
+<div class="bg-surface-container-lowest rounded-2xl p-space-lg shadow-sm flex flex-col items-center gap-space-lg">
+<div class="relative flex items-center justify-center">
+<div class="w-24 h-24 rounded-full bg-primary text-on-primary flex items-center justify-center transition-all duration-200 transform scale-100" id="main-avatar">
+<span class="font-headline-lg text-headline-lg text-on-primary select-none" id="main-initial">A</span>
+</div>
+<div class="absolute -bottom-1 -right-1 bg-secondary-container text-on-secondary-fixed w-7 h-7 rounded-full flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[16px]">edit</span>
+</div>
+</div>
+<div class="flex flex-col items-center gap-space-xs w-full">
+<span class="font-eyebrow text-eyebrow text-on-surface-variant uppercase tracking-wider">CHOOSE BADGE THEME</span>
+<div class="flex items-center justify-center gap-space-md pt-space-xs">
+<button aria-label="Black theme" class="theme-btn relative p-0.5 rounded-full transition-all" data-theme="black" onclick="selectTheme('black', '#000000', '#ffffff')" type="button">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center">
+<span class="font-headline-sm text-headline-sm leading-none">A</span>
+</div>
+<span class="indicator absolute -inset-1 rounded-full bg-secondary-container -z-10 opacity-100 scale-100 transition-transform"></span>
+</button>
+<button aria-label="Signal Green theme" class="theme-btn relative p-0.5 rounded-full transition-all" data-theme="green" onclick="selectTheme('green', '#59fd90', '#00210b')" type="button">
+<div class="w-10 h-10 rounded-full bg-secondary-container text-on-secondary-fixed flex items-center justify-center">
+<span class="font-headline-sm text-headline-sm leading-none">M</span>
+</div>
+<span class="indicator absolute -inset-1 rounded-full bg-secondary-container -z-10 opacity-0 scale-90 transition-transform"></span>
+</button>
+<button aria-label="Warm Grey theme" class="theme-btn relative p-0.5 rounded-full transition-all" data-theme="grey" onclick="selectTheme('grey', '#e8e8e4', '#1c1b1b')" type="button">
+<div class="w-10 h-10 rounded-full bg-surface-container-high text-on-primary-fixed flex items-center justify-center">
+<span class="font-headline-sm text-headline-sm leading-none">K</span>
+</div>
+<span class="indicator absolute -inset-1 rounded-full bg-secondary-container -z-10 opacity-0 scale-90 transition-transform"></span>
+</button>
+<button aria-label="White theme" class="theme-btn relative p-0.5 rounded-full transition-all" data-theme="white" onclick="selectTheme('white', '#ffffff', '#1a1c1a')" type="button">
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest text-on-surface shadow-[inset_0_0_0_1px_rgba(26,28,26,0.2)] flex items-center justify-center">
+<span class="font-headline-sm text-headline-sm leading-none">Z</span>
+</div>
+<span class="indicator absolute -inset-1 rounded-full bg-secondary-container -z-10 opacity-0 scale-90 transition-transform"></span>
+</button>
+</div>
+</div>
+<div class="w-full flex flex-col gap-space-xs">
+<div class="flex items-center justify-between">
+<label class="font-eyebrow text-eyebrow text-on-surface-variant uppercase tracking-wider" for="name-input">YOUR FIRST NAME</label>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Max 12 chars</span>
+</div>
+<div class="relative w-full">
+<input class="w-full bg-surface-container-low text-on-surface font-title-md text-title-md rounded-DEFAULT px-4 py-3.5 focus:outline-none focus:bg-surface-container-lowest transition-colors shadow-inner" id="name-input" maxlength="12" oninput="handleNameChange(this.value)" placeholder="e.g. Kabir" type="text" value="Arjun"/>
+<div class="absolute right-3.5 top-1/2 -translate-y-1/2 flex items-center pointer-events-none text-secondary">
+<span class="material-symbols-outlined text-[20px]" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-space-xs">
+<span class="font-eyebrow text-eyebrow text-on-surface-variant uppercase tracking-wider">HOW YOU APPEAR IN CART</span>
+<div class="bg-surface-container-lowest rounded-2xl p-space-md shadow-sm flex items-center justify-between">
+<div class="flex items-center gap-space-sm min-w-0">
+<div class="w-9 h-9 rounded-full bg-primary text-on-primary flex items-center justify-center shrink-0" id="preview-avatar">
+<span class="font-headline-sm text-headline-sm text-on-primary leading-none" id="preview-initial">A</span>
+</div>
+<div class="flex flex-col min-w-0">
+<div class="flex items-center gap-1.5 truncate">
+<span class="font-title-md text-title-md text-on-surface truncate" id="preview-name">Arjun</span>
+<span class="text-on-surface-variant text-body-sm shrink-0">· Flat 402</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Shared quick bill</span>
+</div>
+</div>
+<div class="shrink-0 bg-secondary-container text-on-secondary-container px-3 py-1 rounded-full flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="font-label-tag text-label-tag font-bold uppercase tracking-wider">PAID ₹310</span>
+</div>
+</div>
+</div>
+<div class="bg-surface-container-low rounded-2xl p-space-md flex items-center gap-space-sm">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest flex items-center justify-center shrink-0 text-on-surface">
+<span class="material-symbols-outlined text-[20px]">bolt</span>
+</div>
+<div class="flex flex-col">
+<span class="font-title-md text-title-md text-on-surface">Auto-linked UPI QR</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Next step pairs your VPA for instant zero-fee flatmate settlements.</span>
+</div>
+</div>
+<div class="pt-space-xs mt-auto">
+<button class="w-full bg-secondary-container text-on-secondary-fixed py-4 rounded-full font-label-action text-label-action uppercase tracking-wider active:scale-[0.98] transition-transform flex items-center justify-center gap-2 shadow-sm" onclick="completeStep()" type="button">
+<span>NEXT</span>
+<span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</div>
+</div>
+<script>
+  let currentTheme = {
+    bg: '#000000',
+    fg: '#ffffff',
+    name: 'black'
+  };
+
+  function selectTheme(themeName, bgHex, fgHex) {
+    currentTheme = { bg: bgHex, fg: fgHex, name: themeName };
+    
+    document.querySelectorAll('.theme-btn').forEach(btn => {
+      const indicator = btn.querySelector('.indicator');
+      if (btn.getAttribute('data-theme') === themeName) {
+        indicator.classList.remove('opacity-0', 'scale-90');
+        indicator.classList.add('opacity-100', 'scale-100');
+      } else {
+        indicator.classList.remove('opacity-100', 'scale-100');
+        indicator.classList.add('opacity-0', 'scale-90');
+      }
+    });
+
+    const mainAvatar = document.getElementById('main-avatar');
+    const mainInitial = document.getElementById('main-initial');
+    const previewAvatar = document.getElementById('preview-avatar');
+    const previewInitial = document.getElementById('preview-initial');
+
+    mainAvatar.style.backgroundColor = bgHex;
+    mainInitial.style.color = fgHex;
+    previewAvatar.style.backgroundColor = bgHex;
+    previewInitial.style.color = fgHex;
+
+    if (themeName === 'white') {
+      mainAvatar.classList.add('shadow-[inset_0_0_0_2px_rgba(26,28,26,0.15)]');
+      previewAvatar.classList.add('shadow-[inset_0_0_0_1px_rgba(26,28,26,0.15)]');
+    } else {
+      mainAvatar.classList.remove('shadow-[inset_0_0_0_2px_rgba(26,28,26,0.15)]');
+      previewAvatar.classList.remove('shadow-[inset_0_0_0_1px_rgba(26,28,26,0.15)]');
+    }
+  }
+
+  function handleNameChange(val) {
+    const cleanVal = val.trim();
+    const initial = cleanVal.length > 0 ? cleanVal[0].toUpperCase() : '?';
+    const displayName = cleanVal.length > 0 ? cleanVal : 'Anonymous';
+
+    document.getElementById('main-initial').textContent = initial;
+    document.getElementById('preview-initial').textContent = initial;
+    document.getElementById('preview-name').textContent = displayName;
+  }
+
+  function completeStep() {
+    const input = document.getElementById('name-input');
+    const name = input.value.trim() || 'Arjun';
+    const btn = event.currentTarget;
+    btn.classList.add('scale-95');
+    setTimeout(() => {
+      btn.classList.remove('scale-95');
+    }, 150);
+  }
+</script></main></body></html>
