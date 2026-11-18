@@ -9,6 +9,9 @@ Built strictly according to the **Kinetic Utility** brutalist design system (`#F
 
 ## 📱 Live Demo & Setup
 
+🔗 **Live Web App on GitHub Pages:** **[https://sonukewatoffcl-bot.github.io/stitch-roommate-cart-mobile-app/](https://sonukewatoffcl-bot.github.io/stitch-roommate-cart-mobile-app/)**
+
+
 ### Run Locally:
 ```bash
 # Clone the repository
