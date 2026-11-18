@@ -1,0 +1,17 @@
+{
+  "name": "Roommate Cart",
+  "short_name": "Flat Cart",
+  "description": "38-Screen Interactive Mobile Fintech Application",
+  "start_url": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FAF9F5",
+  "theme_color": "#121212",
+  "icons": [
+    {
+      "src": "qr_code.png",
+      "sizes": "300x300",
+      "type": "image/png"
+    }
+  ]
+}
