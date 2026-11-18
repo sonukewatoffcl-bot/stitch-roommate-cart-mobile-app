@@ -1,0 +1,1889 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>Roommate Cart · 38 Screens Mobile Experience</title>
+  
+  <!-- Design System Fonts: Barlow Condensed & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "tertiary": "#000000",
+            "error": "#ba1a1a",
+            "outline": "#747878",
+            "on-primary-container": "#858383",
+            "surface-container": "#eeeeea",
+            "on-primary": "#ffffff",
+            "surface": "#faf9f5",
+            "on-secondary-fixed": "#00210b",
+            "on-secondary": "#ffffff",
+            "surface-dim": "#dadad6",
+            "on-background": "#1a1c1a",
+            "outline-variant": "#c4c7c7",
+            "on-tertiary-fixed": "#00210b",
+            "on-error-container": "#93000a",
+            "surface-bright": "#faf9f5",
+            "inverse-surface": "#2f312e",
+            "primary": "#000000",
+            "on-surface": "#1a1c1a",
+            "on-surface-variant": "#444748",
+            "secondary-fixed": "#62ff95",
+            "tertiary-fixed": "#71fd98",
+            "surface-tint": "#5f5e5e",
+            "background": "#faf9f5",
+            "inverse-on-surface": "#f1f1ed",
+            "primary-fixed": "#e5e2e1",
+            "surface-variant": "#e2e3df",
+            "secondary-container": "#59fd90",
+            "tertiary-container": "#00210b",
+            "surface-container-lowest": "#ffffff",
+            "on-tertiary-container": "#009849",
+            "on-secondary-container": "#007236",
+            "on-tertiary": "#ffffff",
+            "on-primary-fixed": "#1c1b1b",
+            "secondary": "#006d34",
+            "primary-container": "#1c1b1b",
+            "on-tertiary-fixed-variant": "#005224",
+            "secondary-fixed-dim": "#37e279",
+            "surface-container-high": "#e8e8e4",
+            "inverse-primary": "#c8c6c5",
+            "error-container": "#ffdad6",
+            "on-secondary-fixed-variant": "#005225",
+            "surface-container-highest": "#e2e3df",
+            "on-primary-fixed-variant": "#474646",
+            "primary-fixed-dim": "#c8c6c5",
+            "tertiary-fixed-dim": "#52e07f",
+            "surface-container-low": "#f4f4f0",
+            "on-error": "#ffffff"
+          },
+          borderRadius: {
+            "DEFAULT": "1rem",
+            "lg": "2rem",
+            "xl": "3rem",
+            "full": "9999px"
+          },
+          spacing: {
+            "space-xs": "0.25rem",
+            "gutter": "1rem",
+            "space-sm": "0.5rem",
+            "margin": "1rem",
+            "gutter-mobile": "0.75rem",
+            "space-lg": "1.5rem",
+            "margin-mobile": "1rem",
+            "space-md": "1rem",
+            "space-xl": "2rem"
+          },
+          fontFamily: {
+            "label-action": ["Barlow Condensed", "sans-serif"],
+            "headline-sm": ["Barlow Condensed", "sans-serif"],
+            "body-sm": ["Inter", "sans-serif"],
+            "headline-lg": ["Barlow Condensed", "sans-serif"],
+            "body-md": ["Inter", "sans-serif"],
+            "display-currency-mobile": ["Barlow Condensed", "sans-serif"],
+            "display-currency": ["Barlow Condensed", "sans-serif"],
+            "label-tag": ["Barlow Condensed", "sans-serif"],
+            "body-lg": ["Inter", "sans-serif"],
+            "eyebrow": ["Inter", "sans-serif"],
+            "title-md": ["Inter", "sans-serif"],
+            "headline-md": ["Barlow Condensed", "sans-serif"]
+          },
+          fontSize: {
+            "label-action": ["18px", { "lineHeight": "22px", "letterSpacing": "0.05em", "fontWeight": "700" }],
+            "headline-sm": ["20px", { "lineHeight": "24px", "letterSpacing": "0.01em", "fontWeight": "700" }],
+            "body-sm": ["12px", { "lineHeight": "16px", "fontWeight": "400" }],
+            "headline-lg": ["32px", { "lineHeight": "36px", "letterSpacing": "-0.01em", "fontWeight": "800" }],
+            "body-md": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+            "display-currency-mobile": ["38px", { "lineHeight": "42px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "display-currency": ["44px", { "lineHeight": "48px", "letterSpacing": "-0.02em", "fontWeight": "800" }],
+            "label-tag": ["13px", { "lineHeight": "16px", "letterSpacing": "0.08em", "fontWeight": "700" }],
+            "body-lg": ["15px", { "lineHeight": "22px", "fontWeight": "500" }],
+            "eyebrow": ["11px", { "lineHeight": "14px", "letterSpacing": "0.12em", "fontWeight": "700" }],
+            "title-md": ["16px", { "lineHeight": "22px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+            "headline-md": ["24px", { "lineHeight": "28px", "letterSpacing": "0em", "fontWeight": "700" }]
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    @layer base {
+      html, body {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        background-color: #121312;
+        font-family: 'Inter', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+      }
+      .pb-safe { padding-bottom: env(safe-area-inset-bottom, 12px); }
+      .pt-safe { padding-top: env(safe-area-inset-top, 12px); }
+    }
+    ::-webkit-scrollbar { display: none; }
+    
+    .studio-canvas {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px 16px 90px 16px;
+      background: radial-gradient(circle at 50% 20%, #1e201e 0%, #0d0e0d 100%);
+    }
+
+    .phone-mockup {
+      position: relative;
+      width: 390px;
+      height: 844px;
+      background: #faf9f5;
+      border-radius: 54px;
+      box-shadow: 
+        0 0 0 4px #2b2b2a,
+        0 0 0 8px #181918,
+        0 25px 60px -15px rgba(0, 0, 0, 0.8),
+        0 0 100px rgba(34, 214, 111, 0.08);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      flex-shrink: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .phone-screen {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      overflow-y: auto;
+      overflow-x: hidden;
+      background-color: #faf9f5;
+      transform: translateZ(0);
+      -webkit-overflow-scrolling: touch;
+      display: flex;
+      flex-direction: column;
+    }
+
+    body.native-mobile .studio-canvas {
+      padding: 0 !important;
+      background: #faf9f5 !important;
+    }
+    body.native-mobile .phone-mockup {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: 100vh !important;
+      height: 100dvh !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      border: none !important;
+    }
+    body.native-mobile .device-hardware,
+    body.native-mobile .desktop-nav-header {
+      display: none !important;
+    }
+
+    .dynamic-island {
+      position: absolute;
+      top: 11px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 120px;
+      height: 32px;
+      background: #000000;
+      border-radius: 20px;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px;
+      color: #ffffff;
+      font-size: 11px;
+      pointer-events: none;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.4);
+    }
+
+    .status-bar {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 28px 0 28px;
+      z-index: 9998;
+      pointer-events: none;
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      color: #1a1c1a;
+    }
+
+    .home-indicator {
+      position: absolute;
+      bottom: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 134px;
+      height: 5px;
+      background: #1a1c1a;
+      border-radius: 100px;
+      z-index: 9999;
+      pointer-events: none;
+      opacity: 0.8;
+    }
+
+    .screen-view {
+      display: none;
+      width: 100%;
+      min-height: 100%;
+      flex-direction: column;
+      flex: 1;
+      animation: fadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .screen-view.active {
+      display: flex !important;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(4px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .master-dock {
+      position: fixed;
+      bottom: 18px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(22, 24, 22, 0.94);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      padding: 8px 14px;
+      border-radius: 9999px;
+      box-shadow: 0 12px 36px rgba(0, 0, 0, 0.5), 0 0 1px 1px rgba(255, 255, 255, 0.1);
+      max-width: 95vw;
+    }
+
+    .drawer-overlay {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.7);
+      backdrop-filter: blur(8px);
+      z-index: 10010;
+    }
+    .drawer-overlay.open {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+    }
+    .screens-drawer {
+      width: 100%;
+      max-width: 820px;
+      max-height: 88vh;
+      background: #faf9f5;
+      border-top-left-radius: 32px;
+      border-top-right-radius: 32px;
+      box-shadow: 0 -20px 50px rgba(0,0,0,0.5);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes slideUp {
+      from { transform: translateY(100%); }
+      to { transform: translateY(0); }
+    }
+
+    .instructions-drawer {
+      width: 100%;
+      max-width: 600px;
+      background: #1c1b1b;
+      color: #faf9f5;
+      border-top-left-radius: 28px;
+      border-top-right-radius: 28px;
+      padding: 24px;
+      max-height: 80vh;
+      overflow-y: auto;
+      box-shadow: 0 -20px 50px rgba(0,0,0,0.6);
+      animation: slideUp 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    #app-toast {
+      position: fixed;
+      top: 60px;
+      left: 50%;
+      transform: translateX(-50%) translateY(-20px);
+      background: #121212;
+      color: #ffffff;
+      padding: 8px 18px;
+      border-radius: 9999px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      z-index: 10020;
+      border: 1px solid #333;
+      box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+    }
+    #app-toast.show {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    button, a, input[type="button"] {
+      transition: transform 0.1s cubic-bezier(0.16, 1, 0.3, 1);
+      user-select: none;
+      -webkit-user-select: none;
+      cursor: pointer;
+    }
+    button:active, a:active, input[type="button"]:active {
+      transform: scale(0.96) !important;
+    }
+  </style>
+</head>
+<body class="selection:bg-secondary-fixed selection:text-on-secondary-fixed">
+
+  <!-- Desktop Top Controls Bar -->
+  <header class="desktop-nav-header w-full bg-[#161716] text-[#faf9f5] border-b border-[#282a28] px-6 py-3 flex items-center justify-between text-xs select-none">
+    <div class="flex items-center gap-3">
+      <div class="flex items-center gap-2">
+        <span class="w-3 h-3 rounded-full bg-secondary-container"></span>
+        <span class="font-headline-sm uppercase tracking-wider text-sm font-bold">ROOMMATE CART</span>
+      </div>
+      <span class="text-outline text-[11px] font-mono">v1.0 · KINETIC UTILITY</span>
+      <span class="px-2 py-0.5 rounded-full bg-[#242624] text-[#85fd9e] font-label-tag text-[10px]">38 LIVE SCREENS</span>
+    </div>
+
+    <div class="hidden md:flex items-center gap-2">
+      <span class="text-outline uppercase text-[10px] tracking-wider">ACTIVE SCREEN:</span>
+      <span id="top-screen-badge" class="font-bold text-[#faf9f5] px-2.5 py-1 rounded bg-[#242624] text-[12px]">01 · Splash</span>
+    </div>
+
+    <div class="flex items-center gap-2">
+      <button id="sound-toggle-btn" onclick="toggleSound()" title="Toggle Sound & Haptic Clicks" class="w-8 h-8 rounded-full bg-[#242624] hover:bg-[#323632] text-[#faf9f5] flex items-center justify-center transition-all">
+        <span class="material-symbols-outlined text-[16px]">volume_up</span>
+      </button>
+
+      <button id="toggle-frame-btn" onclick="toggleNativeMobile()" class="px-3 py-1.5 rounded-full bg-[#242624] hover:bg-[#323632] text-[#faf9f5] font-semibold transition-all flex items-center gap-1.5">
+        <span class="material-symbols-outlined text-[16px]">smartphone</span>
+        <span id="frame-btn-text">Mobile Frame</span>
+      </button>
+
+      <div class="hidden lg:flex items-center gap-1 bg-[#242624] rounded-full p-1">
+        <button onclick="setZoom(0.85)" class="px-2 py-0.5 rounded-full hover:bg-[#343834] text-[11px]">85%</button>
+        <button onclick="setZoom(1.0)" class="px-2 py-0.5 rounded-full bg-[#343834] text-[11px] font-bold">100%</button>
+        <button onclick="setZoom(1.1)" class="px-2 py-0.5 rounded-full hover:bg-[#343834] text-[11px]">110%</button>
+      </div>
+
+      <button onclick="openInstructions()" class="px-3 py-1.5 rounded-full bg-secondary-container text-primary font-bold text-xs hover:bg-[#43e479] transition-all flex items-center gap-1">
+        <span class="material-symbols-outlined text-[16px]">info</span>
+        <span>Specs & Guide</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Studio Workbench Canvas -->
+  <main class="studio-canvas">
+    
+    <!-- Phone Device Shell -->
+    <div id="phone-container" class="phone-mockup">
+      
+      <!-- Hardware: Dynamic Island & Status Bar -->
+      <div class="device-hardware">
+        <div class="status-bar">
+          <span id="status-time">09:41</span>
+          <div class="flex items-center gap-1.5">
+            <span class="material-symbols-outlined text-[16px]">signal_cellular_4_bar</span>
+            <span class="material-symbols-outlined text-[16px]">wifi</span>
+            <span class="material-symbols-outlined text-[18px]">battery_charging_full</span>
+          </div>
+        </div>
+        
+        <div class="dynamic-island">
+          <div class="flex items-center gap-1">
+            <span class="w-2 h-2 rounded-full bg-[#22d66f] animate-pulse"></span>
+            <span class="text-[10px] tracking-wide font-mono">UPI LIVE</span>
+          </div>
+          <span class="material-symbols-outlined text-[14px] text-zinc-400">lock</span>
+        </div>
+      </div>
+
+      <!-- Phone Screen Viewport -->
+      <div id="phone-screen" class="phone-screen">
+        <!--__SCREENS_JOINED__-->
+      </div>
+
+      <!-- Hardware: Home Bar Indicator -->
+      <div class="home-indicator device-hardware"></div>
+    </div>
+
+  </main>
+
+  <!-- Floating Master Controller Dock -->
+  <div class="master-dock select-none">
+    <button onclick="prevScreen()" title="Previous Screen (Left Arrow)" class="w-9 h-9 rounded-full bg-[#242624] hover:bg-[#343834] text-white flex items-center justify-center transition-all active:scale-95">
+      <span class="material-symbols-outlined text-[20px]">arrow_back</span>
+    </button>
+
+    <button onclick="openScreensDrawer()" class="flex items-center gap-2.5 px-3 py-1.5 rounded-full hover:bg-[#282a28] transition-all text-left">
+      <div class="flex flex-col">
+        <div class="flex items-center gap-1.5">
+          <span id="dock-screen-num" class="font-mono text-[11px] font-bold text-secondary-container">01/38</span>
+          <span id="dock-screen-title" class="text-white text-xs font-semibold truncate max-w-[150px] sm:max-w-[220px]">Splash & Value</span>
+        </div>
+        <span id="dock-screen-phase" class="text-outline text-[10px] uppercase tracking-wider">1. Onboarding & Setup</span>
+      </div>
+      <span class="material-symbols-outlined text-outline text-[18px]">expand_less</span>
+    </button>
+
+    <button onclick="nextScreen()" title="Next Screen (Right Arrow)" class="w-9 h-9 rounded-full bg-[#242624] hover:bg-[#343834] text-white flex items-center justify-center transition-all active:scale-95">
+      <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+    </button>
+
+    <div class="w-px h-6 bg-zinc-700 mx-1"></div>
+
+    <button onclick="openScreensDrawer()" class="px-3 py-1.5 rounded-full bg-secondary-container hover:bg-[#4de685] text-primary font-bold text-xs flex items-center gap-1 transition-all active:scale-95">
+      <span class="material-symbols-outlined text-[18px]">apps</span>
+      <span class="hidden sm:inline">All 38 Screens</span>
+    </button>
+  </div>
+
+  <!-- Screen Catalog Drawer Modal -->
+  <div id="drawer-overlay" class="drawer-overlay" onclick="closeDrawer(event)">
+    <div class="screens-drawer" onclick="event.stopPropagation()">
+      <div class="p-5 border-b border-surface-container-high flex items-center justify-between bg-surface">
+        <div class="flex items-center gap-3">
+          <div class="w-9 h-9 rounded-full bg-secondary-container flex items-center justify-center text-primary font-bold">
+            <span class="material-symbols-outlined text-[20px]">dataset</span>
+          </div>
+          <div>
+            <h3 class="font-headline-sm uppercase text-on-surface text-lg font-bold leading-none">ALL 38 APP SCREENS</h3>
+            <p class="font-body-sm text-on-surface-variant text-xs mt-0.5">Click any screen to jump directly</p>
+          </div>
+        </div>
+        <button onclick="closeDrawer()" class="w-8 h-8 rounded-full bg-surface-container hover:bg-surface-container-high flex items-center justify-center text-on-surface transition-all">
+          <span class="material-symbols-outlined text-[20px]">close</span>
+        </button>
+      </div>
+
+      <div class="p-5 overflow-y-auto space-y-6 flex-1 bg-surface-container-lowest">
+        <!-- Flow 1 -->
+        <div>
+          <div class="flex items-center justify-between mb-3 border-b border-surface-container pb-1">
+            <h4 class="font-label-tag text-label-tag text-secondary uppercase font-bold tracking-wider">FLOW 1 · ONBOARDING & SETUP (01 - 06)</h4>
+            <span class="text-outline text-xs">6 Screens</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5">
+            <button onclick="goToScreen(1)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">01</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Splash & Value</div><div class="text-[10px] text-outline truncate">Value prop & split topology</div></div>
+            </button>
+            <button onclick="goToScreen(2)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">02</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Phone OTP</div><div class="text-[10px] text-outline truncate">Mobile verification</div></div>
+            </button>
+            <button onclick="goToScreen(3)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">03</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Profile Setup</div><div class="text-[10px] text-outline truncate">Name & avatar tokens</div></div>
+            </button>
+            <button onclick="goToScreen(4)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">04</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Campus & Hostel</div><div class="text-[10px] text-outline truncate">Location selector</div></div>
+            </button>
+            <button onclick="goToScreen(5)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">05</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Create or Join Flat</div><div class="text-[10px] text-outline truncate">Flat 402 code & QR</div></div>
+            </button>
+            <button onclick="goToScreen(6)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">06</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Link UPI & Alerts</div><div class="text-[10px] text-outline truncate">GPay / PhonePe linking</div></div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Flow 2 -->
+        <div>
+          <div class="flex items-center justify-between mb-3 border-b border-surface-container pb-1">
+            <h4 class="font-label-tag text-label-tag text-secondary uppercase font-bold tracking-wider">FLOW 2 · FLAT HUB & DASHBOARD (07 - 10)</h4>
+            <span class="text-outline text-xs">4 Screens</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2.5">
+            <button onclick="goToScreen(7)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">07</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Home (Open Carts)</div><div class="text-[10px] text-outline truncate">Active Sunday haul</div></div>
+            </button>
+            <button onclick="goToScreen(8)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">08</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Home (Empty State)</div><div class="text-[10px] text-outline truncate">No active hauls</div></div>
+            </button>
+            <button onclick="goToScreen(9)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">09</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Flat Settings</div><div class="text-[10px] text-outline truncate">Flatmates & UPI routing</div></div>
+            </button>
+            <button onclick="goToScreen(10)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">10</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Activity & Alerts</div><div class="text-[10px] text-outline truncate">Notifications feed</div></div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Flow 3 -->
+        <div>
+          <div class="flex items-center justify-between mb-3 border-b border-surface-container pb-1">
+            <h4 class="font-label-tag text-label-tag text-secondary uppercase font-bold tracking-wider">FLOW 3 · SHOPPING & SHARED CART (11 - 18)</h4>
+            <span class="text-outline text-xs">8 Screens</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2.5">
+            <button onclick="goToScreen(11)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">11</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Start New Cart</div><div class="text-[10px] text-outline truncate">Blinkit, Zepto, timer</div></div>
+            </button>
+            <button onclick="goToScreen(12)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">12</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Invite Flatmates</div><div class="text-[10px] text-outline truncate">Copy link & QR code</div></div>
+            </button>
+            <button onclick="goToScreen(13)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">13</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Store Browse</div><div class="text-[10px] text-outline truncate">Staples, dairy, snacks</div></div>
+            </button>
+            <button onclick="goToScreen(14)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">14</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Search Results</div><div class="text-[10px] text-outline truncate">Basmati rice results</div></div>
+            </button>
+            <button onclick="goToScreen(15)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">15</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Item Detail Sheet</div><div class="text-[10px] text-outline truncate">Quantity & split toggle</div></div>
+            </button>
+            <button onclick="goToScreen(16)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">16</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Shared Cart View</div><div class="text-[10px] text-outline truncate">Live lock countdown</div></div>
+            </button>
+            <button onclick="goToScreen(17)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">17</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Ownership Mode</div><div class="text-[10px] text-outline truncate">Equal vs prorated</div></div>
+            </button>
+            <button onclick="goToScreen(18)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">18</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Prorated Sliders</div><div class="text-[10px] text-outline truncate">Custom share ratios</div></div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Flow 4 -->
+        <div>
+          <div class="flex items-center justify-between mb-3 border-b border-surface-container pb-1">
+            <h4 class="font-label-tag text-label-tag text-secondary uppercase font-bold tracking-wider">FLOW 4 · CHECKOUT & UPI SPLIT (19 - 24)</h4>
+            <span class="text-outline text-xs">6 Screens</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5">
+            <button onclick="goToScreen(19)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">19</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Checkout Summary</div><div class="text-[10px] text-outline truncate">Delivery fee split</div></div>
+            </button>
+            <button onclick="goToScreen(20)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">20</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Your Share (₹342)</div><div class="text-[10px] text-outline truncate">Instant UPI trigger</div></div>
+            </button>
+            <button onclick="goToScreen(21)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">21</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">UPI App Handoff</div><div class="text-[10px] text-outline truncate">NPCI payment animation</div></div>
+            </button>
+            <button onclick="goToScreen(22)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">22</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Payment Success</div><div class="text-[10px] text-outline truncate">PAID ₹342 receipt</div></div>
+            </button>
+            <button onclick="goToScreen(23)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">23</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Payment Failed</div><div class="text-[10px] text-outline truncate">Retry / spot me</div></div>
+            </button>
+            <button onclick="goToScreen(24)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">24</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Timer Expired</div><div class="text-[10px] text-outline truncate">Extend lock / revive</div></div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Flow 5 -->
+        <div>
+          <div class="flex items-center justify-between mb-3 border-b border-surface-container pb-1">
+            <h4 class="font-label-tag text-label-tag text-secondary uppercase font-bold tracking-wider">FLOW 5 · ROOMMATE EDGE CASES (25 - 32)</h4>
+            <span class="text-outline text-xs">8 Screens</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-2.5">
+            <button onclick="goToScreen(25)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">25</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Payment Status</div><div class="text-[10px] text-outline truncate">2 of 4 paid, nudge</div></div>
+            </button>
+            <button onclick="goToScreen(26)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">26</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Zoya Is Short</div><div class="text-[10px] text-outline truncate">₹120 deficit crisis</div></div>
+            </button>
+            <button onclick="goToScreen(27)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">27</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Spot Me Approval</div><div class="text-[10px] text-outline truncate">Payback terms terms</div></div>
+            </button>
+            <button onclick="goToScreen(28)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">28</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Room Pool</div><div class="text-[10px] text-outline truncate">Petty cash fund</div></div>
+            </button>
+            <button onclick="goToScreen(29)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">29</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Pay or Drop</div><div class="text-[10px] text-outline truncate">Drop items ultimatum</div></div>
+            </button>
+            <button onclick="goToScreen(30)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">30</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Substitute Voting</div><div class="text-[10px] text-outline truncate">Out of stock vote</div></div>
+            </button>
+            <button onclick="goToScreen(31)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">31</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Surge Price Alert</div><div class="text-[10px] text-outline truncate">Price movement review</div></div>
+            </button>
+            <button onclick="goToScreen(32)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">32</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Revive Expired Cart</div><div class="text-[10px] text-outline truncate">1-tap cart revival</div></div>
+            </button>
+          </div>
+        </div>
+
+        <!-- Flow 6 -->
+        <div>
+          <div class="flex items-center justify-between mb-3 border-b border-surface-container pb-1">
+            <h4 class="font-label-tag text-label-tag text-secondary uppercase font-bold tracking-wider">FLOW 6 · FULFILLMENT, LEDGER & BATCHING (33 - 38)</h4>
+            <span class="text-outline text-xs">6 Screens</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2.5">
+            <button onclick="goToScreen(33)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">33</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Order Tracking</div><div class="text-[10px] text-outline truncate">Gate 2 delivery ETA</div></div>
+            </button>
+            <button onclick="goToScreen(34)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">34</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Delivered Confirm</div><div class="text-[10px] text-outline truncate">Doorstep checklist</div></div>
+            </button>
+            <button onclick="goToScreen(35)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">35</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Report An Issue</div><div class="text-[10px] text-outline truncate">Missing item & refund</div></div>
+            </button>
+            <button onclick="goToScreen(36)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">36</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Order History</div><div class="text-[10px] text-outline truncate">Past hauls & receipts</div></div>
+            </button>
+            <button onclick="goToScreen(37)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">37</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Flat Ledger</div><div class="text-[10px] text-outline truncate">Who owes what & UPI</div></div>
+            </button>
+            <button onclick="goToScreen(38)" class="drawer-item p-3 text-left rounded-xl bg-surface hover:bg-surface-container border border-outline-variant/50 transition-all flex items-center gap-2.5">
+              <span class="w-7 h-7 rounded-lg bg-surface-container-high font-mono text-xs font-bold flex items-center justify-center">38</span>
+              <div class="flex-1 min-w-0"><div class="font-bold text-xs truncate">Floor Batching</div><div class="text-[10px] text-outline truncate">3 flats, 1 drop saving</div></div>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Instructions Modal -->
+  <div id="instructions-overlay" class="drawer-overlay" onclick="closeInstructions(event)">
+    <div class="instructions-drawer" onclick="event.stopPropagation()">
+      <div class="flex items-center justify-between pb-4 border-b border-zinc-700">
+        <div class="flex items-center gap-2">
+          <span class="w-2.5 h-2.5 rounded-full bg-secondary-container"></span>
+          <h3 id="inst-title" class="font-headline-sm uppercase text-white font-bold text-lg">Screen Instructions</h3>
+        </div>
+        <button onclick="closeInstructions()" class="w-7 h-7 rounded-full bg-zinc-800 text-zinc-300 flex items-center justify-center hover:bg-zinc-700">
+          <span class="material-symbols-outlined text-[18px]">close</span>
+        </button>
+      </div>
+
+      <div class="mt-4 space-y-4 text-sm">
+        <div>
+          <span class="text-secondary-container font-label-tag text-xs font-bold uppercase tracking-wider block mb-1">SCENARIO & CONTEXT</span>
+          <p id="inst-desc" class="text-zinc-300 leading-relaxed font-body-sm"></p>
+        </div>
+
+        <div>
+          <span class="text-secondary-container font-label-tag text-xs font-bold uppercase tracking-wider block mb-1">INTERACTION TEST GUIDE</span>
+          <p id="inst-guide" class="text-zinc-300 leading-relaxed font-body-sm"></p>
+        </div>
+
+        <div class="p-3 rounded-xl bg-zinc-900 border border-zinc-800">
+          <span class="text-outline text-[11px] font-mono uppercase tracking-wider block mb-1">DESIGN TOKENS</span>
+          <div class="flex flex-wrap gap-2 text-xs">
+            <span class="px-2 py-0.5 rounded bg-zinc-800 text-zinc-300 font-mono">Barlow Condensed</span>
+            <span class="px-2 py-0.5 rounded bg-zinc-800 text-zinc-300 font-mono">Inter</span>
+            <span class="px-2 py-0.5 rounded bg-zinc-800 text-[#22d66f] font-mono">#22D66F (Signal Green)</span>
+            <span class="px-2 py-0.5 rounded bg-zinc-800 text-zinc-300 font-mono">#121212 (Near Black)</span>
+            <span class="px-2 py-0.5 rounded bg-zinc-800 text-zinc-300 font-mono">390x844px Mobile Base</span>
+          </div>
+        </div>
+
+        <div class="pt-2 flex gap-2">
+          <button onclick="closeInstructions(); nextScreen();" class="flex-1 py-2.5 rounded-full bg-secondary-container hover:bg-[#4be684] text-primary font-bold text-xs uppercase transition-all">
+            Continue To Next Screen →
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification -->
+  <div id="app-toast"></div>
+
+  <!-- Master JavaScript Application Runtime -->
+  <script>
+    // Screen Registry
+    window.SCREENS_DATA = /*__SCREENS_JSON__*/;
+    window.currentScreen = 1;
+    window.isNativeMobile = false;
+
+    // Toast Notification
+    window.showToast = function(msg) {
+      const toast = document.getElementById('app-toast');
+      if (!toast) return;
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2200);
+    };
+
+    // Synthesized Audio & Haptic Feedback Engine
+    let audioContext = null;
+    function getAudioContext() {
+      if (!audioContext) {
+        try { audioContext = new (window.AudioContext || window.webkitAudioContext)(); } catch(e) {}
+      }
+      return audioContext;
+    }
+
+    window.playTactileFeedback = function(type = 'click') {
+      if (window.navigator && window.navigator.vibrate) {
+        try { window.navigator.vibrate(type === 'success' ? [15, 40, 15] : 12); } catch(e) {}
+      }
+      if (window.soundMuted) return;
+      try {
+        const ctx = getAudioContext();
+        if (!ctx) return;
+        if (ctx.state === 'suspended') ctx.resume();
+
+        const osc = ctx.createOscillator();
+        const gain = ctx.createGain();
+        osc.connect(gain);
+        gain.connect(ctx.destination);
+
+        const now = ctx.currentTime;
+        if (type === 'click') {
+          osc.frequency.setValueAtTime(400, now);
+          osc.frequency.exponentialRampToValueAtTime(180, now + 0.04);
+          gain.gain.setValueAtTime(0.06, now);
+          gain.gain.linearRampToValueAtTime(0.001, now + 0.04);
+          osc.start(now);
+          osc.stop(now + 0.04);
+        } else if (type === 'success') {
+          osc.frequency.setValueAtTime(523.25, now);
+          osc.frequency.setValueAtTime(659.25, now + 0.06);
+          osc.frequency.setValueAtTime(783.99, now + 0.12);
+          gain.gain.setValueAtTime(0.08, now);
+          gain.gain.linearRampToValueAtTime(0.001, now + 0.22);
+          osc.start(now);
+          osc.stop(now + 0.22);
+        } else if (type === 'nudge') {
+          osc.frequency.setValueAtTime(440, now);
+          osc.frequency.exponentialRampToValueAtTime(880, now + 0.08);
+          gain.gain.setValueAtTime(0.12, now);
+          gain.gain.linearRampToValueAtTime(0.001, now + 0.08);
+          osc.start(now);
+          osc.stop(now + 0.08);
+        }
+      } catch(e) {}
+    };
+
+    window.toggleSound = function() {
+      window.soundMuted = !window.soundMuted;
+      showToast(window.soundMuted ? 'Sound: Muted 🔕' : 'Sound: ON 🔔');
+      const soundBtn = document.getElementById('sound-toggle-btn');
+      if (soundBtn) {
+        soundBtn.innerHTML = window.soundMuted ? 
+          '<span class="material-symbols-outlined text-[16px] text-zinc-500">volume_off</span>' : 
+          '<span class="material-symbols-outlined text-[16px]">volume_up</span>';
+      }
+    };
+
+    // Navigation Engine
+    window.goToScreen = function(targetNum) {
+      targetNum = parseInt(targetNum, 10);
+      if (isNaN(targetNum) || targetNum < 1 || targetNum > 38 || targetNum === window.currentScreen) return;
+
+      const prevEl = document.getElementById(`screen-view-${window.currentScreen}`);
+      const nextEl = document.getElementById(`screen-view-${targetNum}`);
+      if (!nextEl) return;
+
+      // Clear any running timers from previous screen
+      clearInterval(window._otpTimer);
+      clearInterval(window._cartLockTimer);
+      clearInterval(window._shareTimer);
+      clearInterval(window._urgentTimer);
+      clearInterval(window._batchTimer);
+      clearTimeout(window._handoffTimeout);
+
+      if (prevEl) prevEl.classList.remove('active');
+      nextEl.classList.add('active');
+
+      window.currentScreen = targetNum;
+
+      const screenContainer = document.getElementById('phone-screen');
+      if (screenContainer) screenContainer.scrollTop = 0;
+
+      updateDockUI();
+      closeDrawer();
+      closeInstructions();
+      playTactileFeedback('click');
+
+      // Initialize the controller for this screen
+      if (window.ScreenControllers && window.ScreenControllers[targetNum]) {
+        try {
+          window.ScreenControllers[targetNum]();
+        } catch(err) {
+          console.error(`Error in ScreenController for ${targetNum}:`, err);
+        }
+      }
+    };
+
+    window.nextScreen = function() {
+      const meta = window.SCREENS_DATA[window.currentScreen];
+      if (meta && meta.default_next) {
+        window.goToScreen(meta.default_next);
+      } else {
+        window.goToScreen((window.currentScreen % 38) + 1);
+      }
+    };
+
+    window.prevScreen = function() {
+      const meta = window.SCREENS_DATA[window.currentScreen];
+      if (meta && meta.default_prev) {
+        window.goToScreen(meta.default_prev);
+      } else {
+        window.goToScreen(window.currentScreen === 1 ? 38 : window.currentScreen - 1);
+      }
+    };
+
+    function updateDockUI() {
+      const meta = window.SCREENS_DATA[window.currentScreen];
+      if (!meta) return;
+
+      const numStr = String(window.currentScreen).padStart(2, '0');
+      const dNum = document.getElementById('dock-screen-num');
+      const dTitle = document.getElementById('dock-screen-title');
+      const dPhase = document.getElementById('dock-screen-phase');
+      const tBadge = document.getElementById('top-screen-badge');
+
+      if (dNum) dNum.textContent = `${numStr}/38`;
+      if (dTitle) dTitle.textContent = meta.title;
+      if (dPhase) dPhase.textContent = meta.phase;
+      if (tBadge) tBadge.textContent = `${numStr} · ${meta.title}`;
+
+      const iTitle = document.getElementById('inst-title');
+      const iDesc = document.getElementById('inst-desc');
+      const iGuide = document.getElementById('inst-guide');
+      if (iTitle) iTitle.textContent = `[${numStr}] ${meta.title}`;
+      if (iDesc) iDesc.textContent = meta.description;
+      if (iGuide) iGuide.textContent = meta.instructions;
+    }
+
+    window.toggleNativeMobile = function() {
+      window.isNativeMobile = !window.isNativeMobile;
+      document.body.classList.toggle('native-mobile', window.isNativeMobile);
+      const btnText = document.getElementById('frame-btn-text');
+      if (btnText) btnText.textContent = window.isNativeMobile ? 'Full Responsive' : 'Mobile Frame';
+      showToast(window.isNativeMobile ? 'Full Responsive Viewport' : 'iPhone 16 Pro Frame');
+    };
+
+    window.setZoom = function(scale) {
+      const mockup = document.getElementById('phone-container');
+      if (mockup && !window.isNativeMobile) {
+        mockup.style.transform = `scale(${scale})`;
+      }
+    };
+
+    window.openScreensDrawer = function() {
+      document.getElementById('drawer-overlay').classList.add('open');
+    };
+    window.closeDrawer = function(e) {
+      if (!e || e.target === document.getElementById('drawer-overlay') || e.target.closest('#drawer-close-btn')) {
+        document.getElementById('drawer-overlay').classList.remove('open');
+      }
+    };
+
+    window.openInstructions = function() {
+      document.getElementById('instructions-modal').classList.add('open');
+    };
+    window.closeInstructions = function(e) {
+      if (!e || e.target === document.getElementById('instructions-modal') || e.target.closest('#inst-close-btn')) {
+        document.getElementById('instructions-modal').classList.remove('open');
+      }
+    };
+
+    function updateClock() {
+      const now = new Date();
+      let hours = now.getHours();
+      const minutes = String(now.getMinutes()).padStart(2, '0');
+      hours = hours % 12 || 12;
+      const el = document.getElementById('iphone-clock');
+      if (el) el.textContent = `${hours}:${minutes}`;
+    }
+
+    // Shared Cart Floating Bar Updater
+    window._cartItems = 2;
+    window._cartTotal = 1248;
+    window.updateCartFloatingBar = function(deltaItems, deltaRupees) {
+      window._cartItems = Math.max(0, (window._cartItems || 0) + deltaItems);
+      window._cartTotal = Math.max(0, (window._cartTotal || 1248) + deltaRupees);
+      const floatingBar = document.querySelector('#screen-view-13 [class*="fixed bottom-"]') || document.querySelector('#screen-view-13 [class*="sticky bottom-"]');
+      if (floatingBar) {
+        const textNodes = floatingBar.querySelectorAll('span');
+        textNodes.forEach(span => {
+          if (span.textContent.includes('ITEMS') || span.textContent.includes('₹')) {
+            span.textContent = `${window._cartItems} ITEMS • ₹${window._cartTotal.toLocaleString('en-IN')}`;
+          }
+        });
+      }
+    };
+
+    window.updateCatalogCart = function(el, delta) {
+      playTactileFeedback('click');
+      const counter = el.parentElement.querySelector('.qty-counter');
+      let count = parseInt(counter.textContent, 10) + delta;
+      if (count <= 0) {
+        el.parentElement.outerHTML = '<button class="px-3 py-1 bg-surface-container-highest rounded-DEFAULT text-xs font-bold font-mono text-on-surface hover:bg-secondary hover:text-primary transition-all active:scale-95" onclick="window.updateCatalogCartAdd(this)">+ ADD</button>';
+        window.updateCartFloatingBar(-1, -56);
+      } else {
+        counter.textContent = count;
+        window.updateCartFloatingBar(delta, delta * 56);
+      }
+    };
+
+    window.updateCatalogCartAdd = function(btn) {
+      playTactileFeedback('click');
+      btn.outerHTML = `
+        <div class="flex items-center gap-2 bg-secondary text-primary font-bold px-2 py-1 rounded-DEFAULT text-xs">
+          <span class="cursor-pointer px-1 text-sm select-none" onclick="window.updateCatalogCart(this, -1)">-</span>
+          <span class="qty-counter font-mono">1</span>
+          <span class="cursor-pointer px-1 text-sm select-none" onclick="window.updateCatalogCart(this, 1)">+</span>
+        </div>
+      `;
+      window.updateCartFloatingBar(1, 56);
+      showToast('Item added to collective cart! 🛒');
+    };
+
+    // Reactive Screen Controllers Definition
+    window.ScreenControllers = {
+      1: function() {
+        const view = document.getElementById('screen-view-1');
+        if (!view) return;
+        const avatars = [
+          { id: 'avatar-a', name: 'Aarav (Admin)', role: 'Flat 402 Lead • Created Sunday Haul' },
+          { id: 'avatar-m', name: 'Maya', role: 'Split 50/50 • Paid ₹342 upfront' },
+          { id: 'avatar-k', name: 'Kabir', role: 'Pending ₹342 • Reminder sent via WhatsApp' },
+          { id: 'avatar-z', name: 'Zoya', role: 'Short ₹120 • Spot Me request active' }
+        ];
+        avatars.forEach(av => {
+          const el = view.querySelector('#' + av.id);
+          if (el) {
+            el.style.cursor = 'pointer';
+            el.onclick = () => {
+              playTactileFeedback('click');
+              showToast(`${av.name}: ${av.role}`);
+              const toastText = view.querySelector('#toast-text');
+              if (toastText) toastText.textContent = `${av.name}: ${av.role}`;
+            };
+          }
+        });
+      },
+
+      2: function() {
+        const view = document.getElementById('screen-view-2');
+        if (!view) return;
+        clearInterval(window._otpTimer);
+        let timeLeft = 28;
+        const timerEl = view.querySelector('#countdown-timer');
+        if (timerEl) {
+          timerEl.textContent = '0:28';
+          window._otpTimer = setInterval(() => {
+            timeLeft--;
+            if (timeLeft <= 0) {
+              clearInterval(window._otpTimer);
+              timerEl.innerHTML = '<span class="text-secondary font-bold cursor-pointer hover:underline">RESEND OTP</span>';
+              timerEl.onclick = () => {
+                playTactileFeedback('click');
+                showToast('New 6-digit OTP sent to +91 98765 43210 ✓');
+                window.ScreenControllers[2]();
+              };
+            } else {
+              timerEl.textContent = `0:${timeLeft < 10 ? '0' : ''}${timeLeft}`;
+            }
+          }, 1000);
+        }
+        const inputs = view.querySelectorAll('.otp-digit-box');
+        inputs.forEach((inp, idx) => {
+          inp.oninput = (e) => {
+            if (inp.value.length >= 1) {
+              inp.value = inp.value.slice(-1);
+              if (idx < inputs.length - 1) inputs[idx + 1].focus();
+            }
+          };
+          inp.onkeydown = (e) => {
+            if (e.key === 'Backspace' && !inp.value && idx > 0) {
+              inputs[idx - 1].focus();
+            }
+          };
+        });
+        const verifyBtn = view.querySelector('#verify-button') || view.querySelector('button[type="submit"]');
+        if (verifyBtn) {
+          verifyBtn.onclick = (e) => {
+            e.preventDefault();
+            playTactileFeedback('click');
+            verifyBtn.innerHTML = '<span class="material-symbols-outlined animate-spin text-[18px]">progress_activity</span> VERIFYING...';
+            setTimeout(() => {
+              playTactileFeedback('success');
+              showToast('Phone verified: +91 98765 43210 ✓');
+              window.goToScreen(3);
+            }, 350);
+          };
+        }
+      },
+
+      3: function() {
+        const view = document.getElementById('screen-view-3');
+        if (!view) return;
+        const nameInput = view.querySelector('#name-input');
+        const mainInitial = view.querySelector('#main-initial');
+        const previewInitial = view.querySelector('#preview-initial');
+        const previewName = view.querySelector('#preview-name');
+        if (nameInput) {
+          nameInput.oninput = () => {
+            const val = nameInput.value.trim() || 'Aarav';
+            const init = val.charAt(0).toUpperCase();
+            if (mainInitial) mainInitial.textContent = init;
+            if (previewInitial) previewInitial.textContent = init;
+            if (previewName) previewName.textContent = val;
+          };
+        }
+      },
+
+      4: function() {
+        const view = document.getElementById('screen-view-4');
+        if (!view) return;
+        const options = view.querySelectorAll('.hostel-option, [data-hostel], button[class*="border"]');
+        options.forEach(opt => {
+          opt.onclick = () => {
+            playTactileFeedback('click');
+            options.forEach(o => o.classList.remove('border-2', 'border-secondary', 'bg-secondary-container/20'));
+            opt.classList.add('border-2', 'border-secondary', 'bg-secondary-container/20');
+            showToast(`Hostel selected: ${opt.textContent.trim().split('\n')[0]}`);
+          };
+        });
+      },
+
+      5: function() {
+        const view = document.getElementById('screen-view-5');
+        if (!view) return;
+        const cardCreate = view.querySelector('#card-create');
+        const cardJoin = view.querySelector('#card-join');
+        const confirmBtn = view.querySelector('#confirm-btn');
+        if (cardJoin) {
+          cardJoin.onclick = () => {
+            playTactileFeedback('click');
+            cardJoin.classList.add('border-2', 'border-secondary', 'bg-secondary-container/10');
+            if (cardCreate) cardCreate.classList.remove('border-2', 'border-secondary', 'bg-secondary-container/10');
+            if (confirmBtn) confirmBtn.textContent = 'JOIN FLAT 402 →';
+            showToast('Joining Flat 402 (Hostel 14)');
+          };
+        }
+        if (cardCreate) {
+          cardCreate.onclick = () => {
+            playTactileFeedback('click');
+            cardCreate.classList.add('border-2', 'border-secondary', 'bg-secondary-container/10');
+            if (cardJoin) cardJoin.classList.remove('border-2', 'border-secondary', 'bg-secondary-container/10');
+            if (confirmBtn) confirmBtn.textContent = 'CREATE NEW FLAT →';
+            showToast('Creating a new flat');
+          };
+        }
+      },
+
+      6: function() {
+        const view = document.getElementById('screen-view-6');
+        if (!view) return;
+        const chips = view.querySelectorAll('.app-chip, [data-app]');
+        chips.forEach(chip => {
+          chip.onclick = () => {
+            playTactileFeedback('click');
+            chips.forEach(c => c.classList.remove('border-2', 'border-secondary', 'bg-secondary-container/20'));
+            chip.classList.add('border-2', 'border-secondary', 'bg-secondary-container/20');
+            const appId = chip.getAttribute('data-app') || 'gpay';
+            showToast(`Selected UPI provider: ${appId.toUpperCase()}`);
+          };
+        });
+      },
+
+      7: function() {
+        const view = document.getElementById('screen-view-7');
+        if (!view) return;
+        const haulCards = view.querySelectorAll('.haul-card, [data-haul-card], [class*="bg-surface-container"]');
+        haulCards.forEach(card => {
+          if (card.textContent.includes('BLINKIT') || card.textContent.includes('₹1,248') || card.textContent.includes('SUNDAY')) {
+            card.style.cursor = 'pointer';
+            card.onclick = (e) => {
+              if (e.target.closest('button')) return;
+              playTactileFeedback('click');
+              window.goToScreen(16);
+            };
+          }
+        });
+      },
+
+      9: function() {
+        const view = document.getElementById('screen-view-9');
+        if (!view) return;
+        const qrToggle = view.querySelector('#qrToggleBtn');
+        const qrDrawer = view.querySelector('#qrDrawer');
+        if (qrToggle && qrDrawer) {
+          qrToggle.onclick = () => {
+            playTactileFeedback('click');
+            qrDrawer.classList.toggle('hidden');
+            qrDrawer.classList.toggle('flex');
+          };
+        }
+        const copyBtn = view.querySelector('#copyLinkBtn');
+        if (copyBtn) {
+          copyBtn.onclick = () => {
+            playTactileFeedback('success');
+            showToast('Flat invite link copied to clipboard: stitch.app/flat402 ✓');
+          };
+        }
+      },
+
+      10: function() {
+        const view = document.getElementById('screen-view-10');
+        if (!view) return;
+        const tabAll = view.querySelector('#tab-all');
+        const tabUnread = view.querySelector('#tab-unread');
+        const tabPayments = view.querySelector('#tab-payments');
+        function selectTab(activeTab, filter) {
+          playTactileFeedback('click');
+          [tabAll, tabUnread, tabPayments].forEach(t => {
+            if (t) {
+              t.classList.remove('bg-primary', 'text-on-primary');
+              t.classList.add('bg-surface-container-lowest', 'text-on-surface');
+            }
+          });
+          if (activeTab) {
+            activeTab.classList.remove('bg-surface-container-lowest', 'text-on-surface');
+            activeTab.classList.add('bg-primary', 'text-on-primary');
+          }
+          showToast(`Showing ${filter} notifications`);
+        }
+        if (tabAll) tabAll.onclick = () => selectTab(tabAll, 'All');
+        if (tabUnread) tabUnread.onclick = () => selectTab(tabUnread, 'Unread');
+        if (tabPayments) tabPayments.onclick = () => selectTab(tabPayments, 'Payments');
+      },
+
+      11: function() {
+        const view = document.getElementById('screen-view-11');
+        if (!view) return;
+        const stores = view.querySelectorAll('.store-card, [data-store], button[class*="border"]');
+        stores.forEach(s => {
+          s.onclick = () => {
+            playTactileFeedback('click');
+            stores.forEach(x => x.classList.remove('border-2', 'border-secondary', 'bg-secondary-container/20'));
+            s.classList.add('border-2', 'border-secondary', 'bg-secondary-container/20');
+            showToast(`Store selected: ${s.textContent.trim().split('\n')[0]}`);
+          };
+        });
+        const clearBtn = view.querySelector('#clear-btn');
+        const cartInput = view.querySelector('#cart-name-input');
+        if (clearBtn && cartInput) {
+          clearBtn.onclick = () => {
+            cartInput.value = '';
+            cartInput.focus();
+          };
+        }
+      },
+
+      12: function() {
+        const view = document.getElementById('screen-view-12');
+        if (!view) return;
+        const copyBtn = view.querySelector('#copy-btn');
+        if (copyBtn) {
+          copyBtn.onclick = () => {
+            playTactileFeedback('success');
+            showToast('Cart link copied: flat.cart/c/sunday-restock-402 ✓');
+            const copyText = view.querySelector('#copy-text');
+            if (copyText) copyText.textContent = 'COPIED!';
+          };
+        }
+      },
+
+      13: function() {
+        const view = document.getElementById('screen-view-13');
+        if (!view) return;
+        const pills = view.querySelectorAll('[class*="rounded-full px-3"]');
+        pills.forEach(pill => {
+          pill.onclick = () => {
+            playTactileFeedback('click');
+            pills.forEach(p => p.classList.remove('bg-primary', 'text-on-primary'));
+            pill.classList.add('bg-primary', 'text-on-primary');
+            showToast(`Category: ${pill.textContent.trim()}`);
+          };
+        });
+        const addBtns = view.querySelectorAll('button');
+        addBtns.forEach(btn => {
+          if (btn.textContent.trim().includes('+ ADD') || btn.textContent.trim() === 'ADD') {
+            btn.onclick = (e) => {
+              e.stopPropagation();
+              playTactileFeedback('click');
+              btn.outerHTML = `
+                <div class="flex items-center gap-2 bg-secondary text-primary font-bold px-2 py-1 rounded-DEFAULT text-xs">
+                  <span class="cursor-pointer px-1 text-sm select-none" onclick="window.updateCatalogCart(this, -1)">-</span>
+                  <span class="qty-counter font-mono">1</span>
+                  <span class="cursor-pointer px-1 text-sm select-none" onclick="window.updateCatalogCart(this, 1)">+</span>
+                </div>
+              `;
+              window.updateCartFloatingBar(1, 56);
+              showToast('Added to cart! 🛒');
+            };
+          }
+        });
+        const cards = view.querySelectorAll('[class*="bg-surface-container"]');
+        cards.forEach(card => {
+          if (card.textContent.includes('Basmati') || card.textContent.includes('Rice') || card.textContent.includes('₹520')) {
+            card.style.cursor = 'pointer';
+            card.onclick = (e) => {
+              if (e.target.closest('button') || e.target.closest('.qty-counter')) return;
+              playTactileFeedback('click');
+              window.goToScreen(15);
+            };
+          }
+        });
+      },
+
+      14: function() {
+        const view = document.getElementById('screen-view-14');
+        if (!view) return;
+        const searchInput = view.querySelector('#search-input');
+        const clearBtn = view.querySelector('#clear-search-btn');
+        if (clearBtn && searchInput) {
+          clearBtn.onclick = () => {
+            searchInput.value = '';
+            searchInput.focus();
+          };
+        }
+      },
+
+      15: function() {
+        const view = document.getElementById('screen-view-15');
+        if (!view) return;
+        let qty = 1;
+        const basePrice = 520;
+        const qtyMinus = view.querySelector('#qty-minus');
+        const qtyPlus = view.querySelector('#qty-plus');
+        const qtyVal = view.querySelector('#qty-val');
+        const displayPrice = view.querySelector('#display-price');
+        const addBtn = view.querySelector('#add-to-cart-btn') || view.querySelector('button[class*="bg-primary"]');
+
+        function renderDetail() {
+          if (qtyVal) qtyVal.textContent = qty;
+          const total = qty * basePrice;
+          if (displayPrice) displayPrice.textContent = `₹${total.toLocaleString('en-IN')}`;
+          if (addBtn && addBtn.textContent.includes('ADD')) {
+            addBtn.textContent = `ADD ${qty} TO CART • ₹${total.toLocaleString('en-IN')}`;
+          }
+        }
+        if (qtyMinus) {
+          qtyMinus.onclick = () => {
+            if (qty > 1) { qty--; playTactileFeedback('click'); renderDetail(); }
+          };
+        }
+        if (qtyPlus) {
+          qtyPlus.onclick = () => {
+            qty++; playTactileFeedback('click'); renderDetail();
+          };
+        }
+      },
+
+      16: function() {
+        const view = document.getElementById('screen-view-16');
+        if (!view) return;
+        clearInterval(window._cartLockTimer);
+        let secondsLeft = 14 * 60 + 58;
+        const timerElem = view.querySelector('#countdown-timer');
+        if (timerElem) {
+          window._cartLockTimer = setInterval(() => {
+            secondsLeft--;
+            if (secondsLeft <= 0) {
+              clearInterval(window._cartLockTimer);
+              timerElem.textContent = '00:00';
+              showToast('Cart lock expired!');
+              window.goToScreen(24);
+            } else {
+              const mins = Math.floor(secondsLeft / 60).toString().padStart(2, '0');
+              const secs = (secondsLeft % 60).toString().padStart(2, '0');
+              timerElem.textContent = `${mins}:${secs}`;
+            }
+          }, 1000);
+        }
+      },
+
+      17: function() {
+        const view = document.getElementById('screen-view-17');
+        if (!view) return;
+        const modeCards = view.querySelectorAll('.mode-card, [data-mode]');
+        modeCards.forEach(card => {
+          card.onclick = () => {
+            playTactileFeedback('click');
+            modeCards.forEach(c => c.classList.remove('border-2', 'border-secondary', 'bg-secondary-container/10'));
+            card.classList.add('border-2', 'border-secondary', 'bg-secondary-container/10');
+            const mode = card.getAttribute('data-mode') || 'equal';
+            showToast(`Split mode: ${mode.toUpperCase()}`);
+          };
+        });
+      },
+
+      18: function() {
+        const view = document.getElementById('screen-view-18');
+        if (!view) return;
+        const sliders = view.querySelectorAll('.roommate-slider, input[type="range"]');
+        const TOTAL = 1240;
+        sliders.forEach((slider, idx) => {
+          slider.oninput = () => {
+            const pct = parseInt(slider.value, 10);
+            const amt = Math.round((pct / 100) * TOTAL);
+            const pctEl = view.querySelector(`#pct-val-${idx}`);
+            const amtEl = view.querySelector(`#amt-val-${idx}`);
+            const fillEl = view.querySelector(`#fill-bar-${idx}`);
+            if (pctEl) pctEl.textContent = `${pct}%`;
+            if (amtEl) amtEl.textContent = `₹${amt}`;
+            if (fillEl) fillEl.style.width = `${pct}%`;
+          };
+        });
+      },
+
+      19: function() {
+        const view = document.getElementById('screen-view-19');
+        if (!view) return;
+        const slots = view.querySelectorAll('.slot-pill, [data-slot]');
+        slots.forEach(slot => {
+          slot.onclick = () => {
+            playTactileFeedback('click');
+            slots.forEach(s => s.classList.remove('border-2', 'border-secondary', 'bg-secondary-container/20'));
+            slot.classList.add('border-2', 'border-secondary', 'bg-secondary-container/20');
+            showToast(`Delivery Slot: ${slot.textContent.trim().split('\n')[0]}`);
+          };
+        });
+      },
+
+      20: function() {
+        const view = document.getElementById('screen-view-20');
+        if (!view) return;
+        clearInterval(window._shareTimer);
+        let secondsRemaining = 582;
+        const countdownEl = view.querySelector('#countdown');
+        if (countdownEl) {
+          window._shareTimer = setInterval(() => {
+            if (secondsRemaining > 0) {
+              secondsRemaining--;
+              const mins = Math.floor(secondsRemaining / 60).toString().padStart(2, '0');
+              const secs = (secondsRemaining % 60).toString().padStart(2, '0');
+              countdownEl.textContent = `${mins}:${secs}`;
+            }
+          }, 1000);
+        }
+        const upiCards = view.querySelectorAll('.upi-card, [data-upi], [class*="border"]');
+        const btnText = view.querySelector('#btn-text');
+        upiCards.forEach(c => {
+          c.onclick = () => {
+            playTactileFeedback('click');
+            upiCards.forEach(x => x.classList.remove('border-2', 'border-secondary', 'bg-secondary-container/20'));
+            c.classList.add('border-2', 'border-secondary', 'bg-secondary-container/20');
+            const app = c.getAttribute('data-upi') || 'GPay';
+            if (btnText) btnText.textContent = `PAY ₹342 VIA ${app.toUpperCase()}`;
+            showToast(`Selected UPI: ${app.toUpperCase()}`);
+          };
+        });
+      },
+
+      21: function() {
+        const view = document.getElementById('screen-view-21');
+        if (!view) return;
+        clearTimeout(window._handoffTimeout);
+        window._handoffTimeout = setTimeout(() => {
+          if (window.currentScreen === 21) {
+            playTactileFeedback('success');
+            showToast('₹342 Paid successfully via UPI! ✓');
+            window.goToScreen(22);
+          }
+        }, 2500);
+      },
+
+      22: function() {
+        const view = document.getElementById('screen-view-22');
+        if (!view) return;
+        const copyBtn = view.querySelector('#copy-ref-btn');
+        if (copyBtn) {
+          copyBtn.onclick = () => {
+            playTactileFeedback('success');
+            copyBtn.textContent = 'COPIED ✓';
+            showToast('UPI Ref ID copied: UPI/329482910482/OKAXIS');
+          };
+        }
+      },
+
+      25: function() {
+        const view = document.getElementById('screen-view-25');
+        if (!view) return;
+        const nudgeBtn = view.querySelector('#nudge-button');
+        if (nudgeBtn) {
+          nudgeBtn.onclick = () => {
+            playTactileFeedback('nudge');
+            nudgeBtn.classList.add('scale-105', 'bg-secondary-container');
+            showToast('Pinging Kabir & Zoya on WhatsApp & SMS! ✓');
+            setTimeout(() => nudgeBtn.classList.remove('scale-105', 'bg-secondary-container'), 400);
+          };
+        }
+        const zoyaCards = view.querySelectorAll('[class*="border"]');
+        zoyaCards.forEach(zc => {
+          if (zc.textContent.includes('Zoya') && (zc.textContent.includes('120') || zc.textContent.includes('Short') || zc.textContent.includes('Deficit'))) {
+            zc.style.cursor = 'pointer';
+            zc.onclick = () => {
+              playTactileFeedback('click');
+              window.goToScreen(26);
+            };
+          }
+        });
+      },
+
+      26: function() {
+        const view = document.getElementById('screen-view-26');
+        if (!view) return;
+        let selectedMode = 'spot';
+        const cardSpot = view.querySelector('#card-spot');
+        const cardPool = view.querySelector('#card-pool');
+        const cardDrop = view.querySelector('#card-drop');
+        const ctaBtn = view.querySelector('#primary-cta-btn') || view.querySelector('button[class*="bg-primary"]');
+
+        function setSelection(mode) {
+          selectedMode = mode;
+          [cardSpot, cardPool, cardDrop].forEach(c => {
+            if (c) c.classList.remove('border-2', 'border-secondary', 'bg-secondary-container/10');
+          });
+          if (mode === 'spot' && cardSpot) cardSpot.classList.add('border-2', 'border-secondary', 'bg-secondary-container/10');
+          if (mode === 'pool' && cardPool) cardPool.classList.add('border-2', 'border-secondary', 'bg-secondary-container/10');
+          if (mode === 'drop' && cardDrop) cardDrop.classList.add('border-2', 'border-secondary', 'bg-secondary-container/10');
+          if (ctaBtn) {
+            if (mode === 'spot') ctaBtn.textContent = 'SPOT ZOYA (₹120) →';
+            else if (mode === 'pool') ctaBtn.textContent = 'SPLIT IN ROOM POOL →';
+            else ctaBtn.textContent = 'DROP ZOYA ITEMS & DISPATCH →';
+          }
+          playTactileFeedback('click');
+        }
+        if (cardSpot) cardSpot.onclick = () => setSelection('spot');
+        if (cardPool) cardPool.onclick = () => setSelection('pool');
+        if (cardDrop) cardDrop.onclick = () => setSelection('drop');
+        if (ctaBtn) {
+          ctaBtn.onclick = () => {
+            if (selectedMode === 'spot') window.goToScreen(27);
+            else if (selectedMode === 'pool') window.goToScreen(28);
+            else window.goToScreen(29);
+          };
+        }
+      },
+
+      27: function() {
+        const view = document.getElementById('screen-view-27');
+        if (!view) return;
+        const chips = view.querySelectorAll('.date-chip, [data-date], [class*="rounded-full px-3"]');
+        chips.forEach(c => {
+          c.onclick = () => {
+            playTactileFeedback('click');
+            chips.forEach(x => x.classList.remove('bg-primary', 'text-on-primary'));
+            c.classList.add('bg-primary', 'text-on-primary');
+            showToast(`Payback date: ${c.textContent.trim()}`);
+          };
+        });
+      },
+
+      28: function() {
+        const view = document.getElementById('screen-view-28');
+        if (!view) return;
+        let arjunAmt = 60;
+        const arjunVal = view.querySelector('#arjun-val');
+        const decBtn = view.querySelector('#btn-dec-arjun');
+        const incBtn = view.querySelector('#btn-inc-arjun');
+        const ring = view.querySelector('#pool-progress-ring');
+        function updatePool() {
+          if (arjunVal) arjunVal.textContent = `₹${arjunAmt}`;
+          if (ring) {
+            const offset = 427.26 - (arjunAmt / 120) * 427.26;
+            ring.style.strokeDashoffset = offset;
+          }
+        }
+        if (decBtn) {
+          decBtn.onclick = () => {
+            if (arjunAmt > 10) { arjunAmt -= 10; playTactileFeedback('click'); updatePool(); }
+          };
+        }
+        if (incBtn) {
+          incBtn.onclick = () => {
+            if (arjunAmt < 120) { arjunAmt += 10; playTactileFeedback('click'); updatePool(); }
+          };
+        }
+      },
+
+      30: function() {
+        const view = document.getElementById('screen-view-30');
+        if (!view) return;
+        const cards = view.querySelectorAll('.substitute-card, [class*="border p-"]');
+        const voteBtn = view.querySelector('#vote-btn');
+        cards.forEach(card => {
+          card.onclick = () => {
+            playTactileFeedback('click');
+            cards.forEach(c => c.classList.remove('border-2', 'border-secondary', 'bg-secondary-container/10'));
+            card.classList.add('border-2', 'border-secondary', 'bg-secondary-container/10');
+            if (voteBtn) voteBtn.textContent = 'CONFIRM VOTE (3/4 ACCEPTED) →';
+            showToast(`Selected substitute: ${card.textContent.trim().split('\n')[0]}`);
+          };
+        });
+      },
+
+      34: function() {
+        const view = document.getElementById('screen-view-34');
+        if (!view) return;
+        const items = view.querySelectorAll('.item-checkbox, input[type="checkbox"], [class*="flex items-center gap-3 p-"]');
+        const counterTag = view.querySelector('#counter-tag');
+        items.forEach(item => {
+          item.onclick = () => {
+            playTactileFeedback('click');
+            item.classList.toggle('line-through');
+            item.classList.toggle('opacity-50');
+            const checked = view.querySelectorAll('.line-through').length;
+            if (counterTag) counterTag.textContent = `${5 - checked}/5 VERIFIED`;
+          };
+        });
+      },
+
+      35: function() {
+        const view = document.getElementById('screen-view-35');
+        if (!view) return;
+        const pills = view.querySelectorAll('[id*="pill-"], [class*="rounded-full px-2.5"]');
+        pills.forEach(p => {
+          p.onclick = () => {
+            playTactileFeedback('click');
+            pills.forEach(x => x.classList.remove('bg-error', 'text-on-error', 'bg-primary', 'text-on-primary'));
+            p.classList.add('bg-primary', 'text-on-primary');
+            showToast(`Reason: ${p.textContent.trim()}`);
+          };
+        });
+        const photoBtn = view.querySelector('#photo-dropzone') || view.querySelector('button[class*="border-dashed"]');
+        if (photoBtn) {
+          photoBtn.onclick = () => {
+            playTactileFeedback('success');
+            photoBtn.innerHTML = '<span class="material-symbols-outlined text-secondary text-2xl">check_circle</span> <span class="text-xs font-bold text-secondary">PHOTO_ATTACHED.JPG (1.2 MB)</span>';
+            showToast('Photo proof uploaded! ✓');
+          };
+        }
+      },
+
+      36: function() {
+        const view = document.getElementById('screen-view-36');
+        if (!view) return;
+        const filterBtns = view.querySelectorAll('.filter-btn, [class*="px-3 py-1.5"]');
+        filterBtns.forEach(btn => {
+          btn.onclick = () => {
+            playTactileFeedback('click');
+            filterBtns.forEach(b => b.classList.remove('bg-primary', 'text-on-primary'));
+            btn.classList.add('bg-primary', 'text-on-primary');
+            showToast(`Showing: ${btn.textContent.trim()}`);
+          };
+        });
+      },
+
+      37: function() {
+        const view = document.getElementById('screen-view-37');
+        if (!view) return;
+        const remindBtns = view.querySelectorAll('button');
+        remindBtns.forEach(b => {
+          if (b.textContent.includes('REMIND') || b.textContent.includes('NUDGE')) {
+            b.onclick = () => {
+              playTactileFeedback('nudge');
+              showToast('Payment reminder sent to Kabir on WhatsApp! 🔔');
+            };
+          }
+        });
+      }
+    };
+
+    // Keyboard Shortcuts
+    document.addEventListener('keydown', function(e) {
+      if (e.target.tagName === 'INPUT' || e.target.tagName === 'TEXTAREA') return;
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        e.preventDefault();
+        window.nextScreen();
+      } else if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        window.prevScreen();
+      } else if (e.key.toLowerCase() === 'm') {
+        window.toggleNativeMobile();
+      } else if (e.key.toLowerCase() === 's') {
+        window.toggleSound();
+      } else if (e.key === 'Escape') {
+        window.closeDrawer();
+        window.closeInstructions();
+      }
+    });
+
+    // Populate screens drawer
+    function buildScreensDrawer() {
+      const drawerList = document.getElementById('drawer-screens-list');
+      if (!drawerList) return;
+      drawerList.innerHTML = '';
+
+      let currentPhase = null;
+      Object.keys(window.SCREENS_DATA).forEach(numStr => {
+        const num = parseInt(numStr, 10);
+        const item = window.SCREENS_DATA[num];
+
+        if (item.phase !== currentPhase) {
+          currentPhase = item.phase;
+          const phaseHeader = document.createElement('div');
+          phaseHeader.className = 'px-3 py-2 text-[10px] uppercase font-bold tracking-wider text-outline bg-[#1c1e1c] rounded mt-2 first:mt-0';
+          phaseHeader.textContent = currentPhase;
+          drawerList.appendChild(phaseHeader);
+        }
+
+        const btn = document.createElement('button');
+        btn.className = `w-full text-left px-3 py-2 rounded-lg flex items-center justify-between text-xs hover:bg-[#282a28] transition-colors ${num === window.currentScreen ? 'bg-secondary/20 text-secondary font-bold' : 'text-zinc-300'}`;
+        btn.onclick = () => { window.goToScreen(num); window.closeDrawer(); };
+        btn.innerHTML = `
+          <div class="flex items-center gap-2">
+            <span class="font-mono text-[11px] opacity-60">${String(num).padStart(2, '0')}</span>
+            <span class="truncate max-w-[200px]">${item.title}</span>
+          </div>
+          <span class="text-[9px] uppercase tracking-wider px-1.5 py-0.5 rounded bg-[#202220] text-outline font-mono">${item.tag}</span>
+        `;
+        drawerList.appendChild(btn);
+      });
+    }
+
+    // App Initialization
+    window.addEventListener('DOMContentLoaded', function() {
+      updateClock();
+      setInterval(updateClock, 30000);
+      buildScreensDrawer();
+      updateDockUI();
+
+      // Initialize first screen controller
+      if (window.ScreenControllers && window.ScreenControllers[1]) {
+        window.ScreenControllers[1]();
+      }
+
+      // Universal click & delegation handler
+      const screenContainer = document.getElementById('phone-screen');
+      if (!screenContainer) return;
+
+      screenContainer.addEventListener('click', function(e) {
+        const btn = e.target.closest('button, a, [data-path], input[type="button"], [class*="cursor-pointer"]');
+        if (!btn) return;
+
+        playTactileFeedback('click');
+
+        // 1. Bottom Navigation Tabs
+        const path = btn.getAttribute('data-path');
+        if (path) {
+          e.preventDefault();
+          if (path === 'carts') window.goToScreen(7);
+          else if (path === 'orders') window.goToScreen(36);
+          else if (path === 'ledger') window.goToScreen(37);
+          else if (path === 'flat') window.goToScreen(9);
+          return;
+        }
+
+        // 2. Back Chevrons
+        const txt = btn.textContent.trim().toUpperCase();
+        const hasBack = btn.querySelector('.material-symbols-outlined')?.textContent.trim() === 'arrow_back' || txt === 'ARROW_BACK';
+        if (hasBack || btn.getAttribute('data-back')) {
+          e.preventDefault();
+          window.prevScreen();
+          return;
+        }
+
+        // 3. Screen Specific Flows
+        const sNum = window.currentScreen;
+        if (sNum === 1 && (txt.includes('GET STARTED') || txt.includes('I HAVE AN ACCOUNT'))) {
+          e.preventDefault();
+          window.goToScreen(2);
+        } else if (sNum === 2 && txt.includes('VERIFY')) {
+          e.preventDefault();
+          showToast('OTP Verified: +91 98765 43210 ✓');
+          window.goToScreen(3);
+        } else if (sNum === 3 && txt.includes('CONTINUE')) {
+          e.preventDefault();
+          window.goToScreen(4);
+        } else if (sNum === 4 && txt.includes('CONTINUE')) {
+          e.preventDefault();
+          window.goToScreen(5);
+        } else if (sNum === 5 && (txt.includes('CREATE') || txt.includes('JOIN') || txt.includes('CONFIRM'))) {
+          e.preventDefault();
+          showToast('Joined Flat 402!');
+          window.goToScreen(6);
+        } else if (sNum === 6 && (txt.includes('CONFIRM') || txt.includes('GO TO FLAT') || txt.includes('DONE'))) {
+          e.preventDefault();
+          window.goToScreen(7);
+        } else if (sNum === 7 && (txt.includes('NEW CART') || txt.includes('+ NEW CART'))) {
+          e.preventDefault();
+          window.goToScreen(11);
+        } else if (sNum === 8 && (txt.includes('NEW CART') || txt.includes('QUICK START'))) {
+          e.preventDefault();
+          window.goToScreen(11);
+        } else if (sNum === 9 && txt.includes('INVITE')) {
+          e.preventDefault();
+          window.goToScreen(12);
+        } else if (sNum === 11 && (txt.includes('START') || txt.includes('CREATE') || txt.includes('NEXT'))) {
+          e.preventDefault();
+          window.goToScreen(12);
+        } else if (sNum === 12 && (txt.includes('START') || txt.includes('SHOPPING') || txt.includes('BROWSE'))) {
+          e.preventDefault();
+          window.goToScreen(13);
+        } else if (sNum === 13 && (txt.includes('VIEW CART') || txt.includes('CART'))) {
+          e.preventDefault();
+          window.goToScreen(16);
+        } else if (sNum === 14 && txt.includes('VIEW CART')) {
+          e.preventDefault();
+          window.goToScreen(16);
+        } else if (sNum === 15 && (txt.includes('ADD TO CART') || txt.includes('CONFIRM'))) {
+          e.preventDefault();
+          showToast('Item added to Flat 402 cart!');
+          window.goToScreen(16);
+        } else if (sNum === 16 && (txt.includes('LOCK CART') || txt.includes('READY') || txt.includes('CHECKOUT'))) {
+          e.preventDefault();
+          window.goToScreen(17);
+        } else if (sNum === 17 && txt.includes('CONFIRM')) {
+          e.preventDefault();
+          window.goToScreen(18);
+        } else if (sNum === 18 && (txt.includes('CONFIRM') || txt.includes('SHARES'))) {
+          e.preventDefault();
+          showToast('Prorated shares locked!');
+          window.goToScreen(19);
+        } else if (sNum === 19 && (txt.includes('PAY') || txt.includes('PROCEED'))) {
+          e.preventDefault();
+          window.goToScreen(20);
+        } else if (sNum === 20 && (txt.includes('GPAY') || txt.includes('PHONEPE') || txt.includes('PAY'))) {
+          e.preventDefault();
+          window.goToScreen(21);
+        } else if (sNum === 21) {
+          e.preventDefault();
+          window.goToScreen(22);
+        } else if (sNum === 22) {
+          if (txt.includes('VIEW PAYMENT STATUS') || txt.includes('STATUS')) {
+            e.preventDefault();
+            window.goToScreen(25);
+          } else if (txt.includes('SPOT HER') || txt.includes('SPOT')) {
+            e.preventDefault();
+            window.goToScreen(26);
+          } else if (txt.includes('HOME') || txt.includes('DONE')) {
+            e.preventDefault();
+            window.goToScreen(7);
+          }
+        } else if (sNum === 23 && txt.includes('TRY AGAIN')) {
+          e.preventDefault();
+          window.goToScreen(21);
+        } else if (sNum === 24 && txt.includes('REVIVE')) {
+          e.preventDefault();
+          window.goToScreen(32);
+        } else if (sNum === 25 && txt.includes('LEDGER')) {
+          e.preventDefault();
+          window.goToScreen(37);
+        } else if (sNum === 27 && (txt.includes('APPROVE') || txt.includes('CONFIRM') || txt.includes('SPOT'))) {
+          e.preventDefault();
+          showToast('Spot Me recorded in Flat Ledger!');
+          window.goToScreen(22);
+        } else if (sNum === 28 && (txt.includes('POOL') || txt.includes('CONTRIBUTE') || txt.includes('USE'))) {
+          e.preventDefault();
+          showToast('₹120 covered from Flat Pool!');
+          window.goToScreen(22);
+        } else if (sNum === 29 && (txt.includes('DROP') || txt.includes('DISPATCH'))) {
+          e.preventDefault();
+          showToast('Non-essential items dropped. Dispatching haul!');
+          window.goToScreen(33);
+        } else if (sNum === 30 && (txt.includes('VOTE') || txt.includes('ACCEPT'))) {
+          e.preventDefault();
+          showToast('Substitution approved!');
+          window.goToScreen(19);
+        } else if (sNum === 31 && txt.includes('ACCEPT')) {
+          e.preventDefault();
+          window.goToScreen(19);
+        } else if (sNum === 32 && txt.includes('REVIVE')) {
+          e.preventDefault();
+          showToast('Cart revived!');
+          window.goToScreen(16);
+        } else if (sNum === 33 && (txt.includes('DELIVERED') || txt.includes('COLLECT') || txt.includes('GATE'))) {
+          e.preventDefault();
+          window.goToScreen(34);
+        } else if (sNum === 34) {
+          if (txt.includes('EVERYTHING') || txt.includes('CONFIRM')) {
+            e.preventDefault();
+            window.goToScreen(36);
+          } else if (txt.includes('MISSING') || txt.includes('ISSUE')) {
+            e.preventDefault();
+            window.goToScreen(35);
+          }
+        } else if (sNum === 35 && (txt.includes('SUBMIT') || txt.includes('CLAIM'))) {
+          e.preventDefault();
+          showToast('Claim submitted! ₹56 credited to Flat Ledger.');
+          window.goToScreen(37);
+        } else if (sNum === 36 && txt.includes('FLAT 402')) {
+          e.preventDefault();
+          window.goToScreen(33);
+        } else if (sNum === 37) {
+          if (txt.includes('SETTLE') || txt.includes('UPI')) {
+            e.preventDefault();
+            window.goToScreen(21);
+          } else if (txt.includes('BATCH')) {
+            e.preventDefault();
+            window.goToScreen(38);
+          }
+        } else if (sNum === 38 && (txt.includes('JOIN') || txt.includes('BATCH'))) {
+          e.preventDefault();
+          showToast('Joined Floor Batch! Saved ₹60 delivery fee.');
+          window.goToScreen(11);
+        }
+      });
+    });
+
+    if (window.innerWidth <= 640) {
+      window.toggleNativeMobile();
+    }
+  </script>
+</body>
+</html>
+
+
+
+
