@@ -10,13 +10,13 @@ Built strictly according to the **Kinetic Utility** brutalist design system (`#F
 ## 📱 Live Demo & Setup
 
 - 🔗 **Direct Live Web App:** **[https://sonukewatoffcl-bot.github.io/stitch-roommate-cart-mobile-app/](https://sonukewatoffcl-bot.github.io/stitch-roommate-cart-mobile-app/)**
-- ⚡ **Short Share Link:** **[https://tinyurl.com/roommate-cart](https://tinyurl.com/roommate-cart)**
+- ⚡ **Short Share Link:** **[https://tinyurl.com/roommate-cart-402](https://tinyurl.com/roommate-cart-402)**
 
 ### 📲 Instant QR Code Scan:
 Scan this code with any phone camera (iPhone or Android) to open the app directly:
 
 <p align="center">
-  <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://tinyurl.com/roommate-cart" alt="Scan to Open Roommate Cart" width="200" height="200" />
+  <img src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://tinyurl.com/roommate-cart-402" alt="Scan to Open Roommate Cart" width="200" height="200" />
 </p>
 
 ### Run Locally:
